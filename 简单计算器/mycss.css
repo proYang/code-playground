@@ -1,0 +1,86 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: Helvetica,Geneva,Verdana,Arial,Univers;
+}
+
+#top{
+	margin: 10px auto auto auto;
+	height: 440px;
+	width: 320px;
+	background-color: #e6e6e6;
+	box-shadow: 0 0 10px #e7e7e7;
+}
+#foot{
+	padding-top: 20px;
+	text-align: center;
+	font-size: 18px;
+	font-family: "楷体"; 
+}
+#title{
+	height: 40px;
+	width: 320px;
+	background-color: #f2f2f2;
+}
+#title span{
+	margin-left: 10px;
+	height: 40px;
+	line-height: 30px;
+	/*font-weight: bold;*/
+	font-family: "楷体";
+	font-size: 18px;
+}
+#show{
+	height: 120px;
+	width: 320px;
+	background-color: #f2f2f2;
+	text-align: right;
+}
+
+
+
+#input{
+	margin-top: 10px;
+	margin-left: 11px;
+	height: 40px;
+	width: 294px;
+	margin-right: 15px;
+	font-size: 30px;
+	background-color: #f2f2f2;
+	border:none;
+	text-align: right;
+	outline: none;  /*隐藏选定时边框*/
+}
+#output{
+	margin-top: 10px;
+	height: 50px;
+	width: 294px;
+	margin-right: 15px;
+	margin-left: 11px;
+	font-size: 50px;
+	background-color: #f2f2f2;
+	border:none;
+	text-align: right;
+	outline: none;  /*隐藏选定时边框*/
+}
+
+
+
+
+li{
+	float: left;
+	height: 56px;
+	width: 80px;
+	background-color: #e6e6e6;
+	text-align: center;
+	line-height: 56px;
+	font-size: 20px;
+}
+li:hover{
+	background-color: #cfcfcf;
+}
+#equal:hover{
+	background-color: #29a7cc;
+	color: #fff;
+}

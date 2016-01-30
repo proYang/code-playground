@@ -1,0 +1,172 @@
+*{
+	margin:0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 10px;
+	font-family: Helvetica,Geneva,Verdana,Arial,Univers;
+}
+/*.title{
+	width: 35px;
+}*/
+.title1{
+	height: 32px;
+	width: 37px;
+	float: left;
+	margin-top: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.menu{
+	width: 710px;
+	height: 350px;
+	background-color: #f9f9f9;
+	text-align: center;
+}
+.menu ul li{
+	float: left;
+	line-height: 32px;/*文字垂直居中*/
+}
+.Save{
+	margin-top: -350px;
+}
+.row{
+	width: 239px;
+	margin-top: -200px;
+	background-color: #fff;
+}
+/*#File{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #f9f9f9;
+}*/
+#File{
+	margin-left: 90px;
+	margin-top: 20px;
+	width: 37px;
+	height: 32px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #f9f9f9;
+}
+#File:hover{
+	width: 37px;
+	background-color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e7e7e7;
+}
+#File:hover li{
+	margin-top:0px; 
+}
+#File:hover ul{
+	height: 101px;
+	/*height: auto;*/
+	width: 239px;
+	margin-left: -1px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e7e7e7;
+	background-color: #fff;
+}
+.icon{
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 13px;
+	background-repeat: no-repeat;
+} 
+.text{
+	width: 110px;
+	float: left;
+	height: 34px;
+	text-align: left;
+	margin-left: 4px;
+}
+.note{
+	width: 53px;
+	height: 34px;
+	float: right;
+	margin-right: 15px;
+	background-repeat: no-repeat;
+	color: #999;
+}
+.last:hover{
+	background-color: #dc4935;
+	color: #fff;
+}
+
+
+#topDiv{
+	float: left;
+	text-align: left;
+	margin-top: -40px;
+	margin-left: 239px;
+	background-color: #fff;
+	height: 161px;
+	width: 199px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e7e7e7;
+	display: none;
+}
+/*#topDiv{
+	height: 161px;
+	width: 199px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e7e7e7;
+	display: none;
+}*/
+/*#r{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e7e7e7;
+}
+#row2:hover #topDiv div{
+	height: 29px;
+	width: 199px;
+	display: block;
+}*/
+/*
+#row2:hover >div{
+	margin-top: 40px;
+	margin-left: 235px;
+	height: 163px;
+	width: 199px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e7e7e7;
+	background-color: #fff;
+}
+*/
+
+
+
+#File_icon{
+	background-image: url("image/new.png");
+	margin-left: 15px;
+}
+#Open_icon{
+	background-image: url("image/open.png");
+}
+#Save_icon{
+	background-image: url("image/save.png");
+}
+#Export_icon{
+	background-image: url("image/export.png");
+}
+#Print_icon{
+	background-image: url("image/print.png");
+}
+#Recent_icon{
+	margin-right: 23px;
+	background-image: url("image/arrow.png");
+	background-position: right;
+}
+#lastul{
+	height: 70px !important;
+}
+#row2{
+	height: 34px;/*防止第三级导航撑开二级导航*/
+}

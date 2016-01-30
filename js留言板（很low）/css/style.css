@@ -1,0 +1,75 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif,"楷体";
+	font-size: 14px;
+}
+.topDiv{
+	width: 720px;
+	height: 40px;
+	background-color: #e6e6e6;
+	box-shadow: 0 0 10px #e7e7e7;
+	margin: 0 auto 25px auto;
+	text-align: center;
+	font-size: 20px;
+	line-height:40px;
+	border-bottom-left-radius: 5px; 
+	border-bottom-right-radius: 5px; 
+}
+#container{
+	width: 720px;
+	margin: 0 auto;
+}
+#talk{
+	width: 720px;
+	margin: 25px auto 0 auto;
+}
+#text{
+	width: 400px;
+	height: 140px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+.content{
+	width: 518px;
+	font-size: 16px;
+	min-height: 140px;
+	border: 1px #a9a9a9 solid;
+	border-radius: 5px;
+	margin: 25px auto 0 auto;
+	padding: 10px 50px 10px 50px;
+	word-wrap:break-word;
+	float: left;
+	box-shadow: 0 0 10px 5px #e7e7e7;
+}
+.user{
+	font-size: 19px;
+	display: block;
+	margin: 25px auto 0 auto;
+	width: 100px;
+	float: left;
+}
+.perColor{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: black;
+	float: right;
+}
+#red{
+	background-color: #ef5350;
+}
+#green{
+	background-color: #4caf50;
+}
+#blue{
+	background-color: #03a9f4;
+}
+#random{
+	background: url('../image/bg.png');
+	background-size: 30px;
+}
+#part{
+	margin-left: 310px;
+}

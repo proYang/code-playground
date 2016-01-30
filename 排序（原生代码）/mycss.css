@@ -1,0 +1,29 @@
+*{
+	font-family: "楷体";
+}
+#topDiv{
+	height: 200px;
+	width: 250px;
+	margin: auto;
+	margin-top: 150px;
+	background-color: blue;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-radius: 5px;
+	box-shadow:0 0 15px #e7e7e7;
+}
+#topDiv >div{
+	height: 50px;
+}
+
+
+#buttonUp{
+	margin: 15px 0 15px 45px;
+}
+#buttonDown{
+	margin: 15px 0 15px 10px;
+}
+#footDiv{
+	margin: 20px auto 0 auto;
+	text-align: center;
+}

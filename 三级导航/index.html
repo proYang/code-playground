@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三级导航</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="mycss.css">
+</head>
+<body>
+	<div class="menu">
+		<ul>
+			<li id="File">
+				<span class="title">File</span>
+				<ul>
+					<li class="row">
+						<span class="icon" id="File_icon"></span>
+						<span class="text">New</span> 
+						<span class="note">Ctrl+N</span>
+					</li>
+					<li class="row">
+						<span class="icon" id="Open_icon"></span>
+						<span class="text">Open</span> 
+						<span class="note">Ctrl+O</span>
+					</li>
+					<li class="row" id="row2">
+						<span class="icon"></span>
+						<span class="text">Recent Documents</span> 
+						<span class="note" id="Recent_icon"></span>
+						<div id="topDiv">
+							<div class="last">&nbsp&nbsp&nbsp&nbsp&nbsp website sitemap.doc</div>
+							<div class="last">&nbsp&nbsp&nbsp&nbsp&nbsp client brief.doc</div>
+							<div class="last">&nbsp&nbsp&nbsp&nbsp&nbsp web design requirements.doc</div>
+							<div class="last">&nbsp&nbsp&nbsp&nbsp&nbsp meta information.doc</div>
+							<div class="last">&nbsp&nbsp&nbsp&nbsp&nbsp usability fixes.doc</div>
+						</div>
+						<!-- <div id="topDiv">
+							<div class="last">&nbsp website sitemap.doc</div>
+							<div class="last">&nbsp client brief.doc</div>
+							<div class="last">&nbsp web design requirements.doc</div>
+							<div class="last">&nbsp meta information.doc</div>
+							<div class="last">&nbsp usability fixes.doc</div>
+						</div> -->
+					</li>
+
+				
+				</ul>
+				<ul>
+					<li class="row" id="Save">
+						<span class="icon" id="Save_icon"></span>
+						<span class="text">Save</span> 
+						<span class="note">Ctrl+S</span>
+					</li>
+					<li class="row">
+						<span class="icon"></span>
+						<span class="text">Save As</span> 
+						<span class="note"></span>
+					</li>
+					<li class="row">
+						<span class="icon" id="Export_icon"></span>
+						<span class="text">Export</span> 
+						<span class="note"></span>
+					</li>
+				</ul>
+				<ul id="lastul">
+					<li class="row" id="Save">
+						<span class="icon" id="Print_icon"></span>
+						<span class="text">Print</span> 
+						<span class="note"></span>
+					</li>
+					<li class="row">
+						<span class="icon"></span>
+						<span class="text">Exit</span> 
+						<span class="note"></span>
+					</li>
+				</ul>
+				<!-- <div id="topDiv">
+							<div id="last1">&nbsp website sitemap.doc</div>
+							<div id="last2">&nbsp client brief.doc</div>
+							<div id="last3">&nbsp web design requirements.doc</div>
+							<div id="last4">&nbsp meta information.doc</div>
+							<div id="last5">&nbsp usability fixes.doc</div>
+				</div> -->
+						
+			</li>
+			<li><span class="title1" id="Edit">Edit</span></li>
+			<li><span class="title1">View</span></li>
+			<li><span class="title1">Insert</span></li>
+			<li><span class="title1">Format</span></li>
+			<li><span class="title1">Window</span></li>
+			<li><span class="title1">Help</span></li>
+		</ul>
+
+		<script type="text/javascript">
+			document.getElementById("row2").addEventListener("mouseenter", mouseEnter);
+			document.getElementById("row2").addEventListener("mouseleave", mouseLeave);
+			// document.getElementById("last1").addEventListener("mouseenter", mouseOn);
+			// document.getElementById("last1").addEventListener("mouseleave", mouseOut);
+			function mouseEnter () {
+				document.getElementById("topDiv").style.display="block";
+			}
+			function mouseLeave (){
+				document.getElementById("topDiv").style.display="none";
+			}
+			// function mouseOn () {
+			// 	document.getElementById("last1").style.background.color="#dc4935";
+			// }
+			// function mouseOut (){
+			// 	document.getElementById("last1").style.background.color="#fff";
+			// }
+		</script>
+	</class
+</body>
+</html>
