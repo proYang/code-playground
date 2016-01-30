@@ -1,0 +1,87 @@
+@font-face {font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot'); /* IE9*/
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+body{
+	width: 100%;
+	margin: 0;
+    padding: 0;
+	background-color: #dac8a5;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:40px;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+#bigcontainer{
+	position: relative;
+	margin: 80px auto;
+	height: 404px;
+	width: 960px;
+	border-radius: 8px;
+}
+#container{
+	position: relative;
+	height: 404px;
+	width: 960px;
+	overflow: hidden;
+	border-radius: 8px;
+}
+#imageList{
+	position: absolute;
+	height: 404px;
+	width: 3840px;
+	border-radius: 8px;
+}
+#imageList img{
+	float: left;
+	height: 404px;
+	width: 960px;
+}
+#next,
+#pre{
+	position: absolute;
+	top: 162px;
+	text-align: center;
+	height: 80px;
+	width: 80px;
+	cursor: pointer;
+	line-height: 80px;
+	border-radius: 50%;
+	background-color: #fff;
+}
+#pre{
+	left: -40px;
+}
+#next{
+	right: -40px;
+}
+#next:active{
+	margin-right: 2px;
+}
+#pre:active{
+	margin-left: 2px;
+}
+.circle{
+	margin: 0 5px;
+	float: left;
+	height: 13px;
+	width: 13px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background-color: #fff;
+	list-style: none;
+}
+#container ul{
+	position: absolute;
+	left: 424px;
+	bottom: 20px;
+	margin: 0;
+	padding: 0;
+}
