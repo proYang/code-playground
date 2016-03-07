@@ -43,6 +43,7 @@
 		echo "<td>{$row['price']}</td>";
 		echo "</tr>";
 	}
+	mysqli_close($link);
 ?>
 </table>
 </div>
