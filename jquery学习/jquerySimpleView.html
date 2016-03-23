@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery简单效果</title>
+	<script type="text/javascript" src="jquery/jquery-2.2.2.min.js"></script>
+</head>
+<body>
+	<div>
+		<h4>显示与隐藏</h4>
+		<p id="content">content</p>
+		<button id="hide">隐藏</button>
+		<button id="show">显示</button>
+		<button id="toggle">显示/隐藏</button>
+	</div>
+
+	<div>
+	<style>
+		#mydiv{
+			height: 100px;
+			width: 100px;
+			background-color: #ddd;
+			margin-top: 10px;
+		}
+	</style>
+		<h4>淡入淡出(未完成)</h4>
+		<div id="mydiv"></div>
+		<button id="fadeIn">fadeIn</button>
+		<button id="fadeOut">fadeOut</button>
+		<button id="fadeToggle">fadeToggle</button>
+		<button id="fadeTo">fadeTo</button>
+	</div>
+
+
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			$('#hide').click(function(){
+				$('#content').hide(1000);
+			});
+			$('#show').click(function(){
+				$('#content').show(1000);
+			});
+			$('#toggle').click(function(){
+				$('#content').toggle(1000);
+			});
+		});
+	</script>
+</body>
+</html>
