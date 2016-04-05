@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dom操作</title>
+	<style type="text/css">
+		#wrap{
+			margin: 0 auto;
+			width: 500px;
+		}
+		p{
+			margin:  0 auto;
+			width: 300px;
+			background-color: #acf;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<p id="p1">原节点</p>
+	</div>
+	<script type="text/javascript">
+		window.onload= function () {
+			var newP1 = document.createElement("p");
+			newP1.textContent="newP";
+			var warp = document.getElementById('wrap');
+			// warp.insertBefore(newP1,document.getElementById('p1'));
+			console.log("insertBefore()接受两个参数，第一个为待插入的节点，第二个指明在哪个节点前面，如果不传入第二个参数，则跟appendChild一样，放在最后。");
+			// warp.appendChild(newP1);
+			console.log("appendChild() 将一个节点插入到调用节点的最后面");
+			// warp.replaceChild(newP1,document.getElementById('p1'));
+			console.log("replaceChild()删除一个子节点，并用一个新节点代替它，第一个参数为新建的节点，第二个节点为被替换的节点");
+			// warp.removeChild(document.getElementById('p1'));
+			console.log("removeChild() 由父元素调用，删除一个子节点。注意是直接父元素调用，删除直接子元素才有效，删除孙子元素就没有效果了。"); 
+		}
+	</script>
+</body>
+</html>
