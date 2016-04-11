@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>省市县三级联动下拉菜单</title>
+</head>
+<body>
+	<label for="provice">省：</label><select name="province" id="province"></select>
+	<label for="city">市：</label><select name="city" id="city"></select>
+	<label for="area">县：</label><select name="area" id="area"></select>
+	<script>
+		window.onload = function (argument) {
+			fillOptions('province');
+			fillOptions('city');
+			fillOptions('area');
+		}
+		var arr = new Array(); //数据数组
+		//定义数据    id、名字、父id
+		arr[arr.length] = [1, "北京市", null];
+		arr[arr.length] = [2, "四川省", null];
+		arr[arr.length] = [3, "广东省", null];
+		arr[arr.length] = [4, "北京市", 1];
+		arr[arr.length] = [5, "成都市", 2];
+
+		function fillOptions (type) {
+			if (type == 'province') {
+				//获取省份下拉菜单DOM
+				var province = document.getElementById('province');
+				//首先置空
+				province.innerHTML = '';
+				//填充省的字符串
+				var proStr = '<option value=""></option>';
+				for (var i = 0; i < arr.length; i++) {
+					var item = arr[i];
+					//如果没有父id，则是省份
+					if (item[2] == null) {
+						proStr += '<option value="'+item[0]+'">'+item[1]+'</option>';
+					}
+				}
+				province.innerHTML = proStr;
+			}else if(type == 'city') {
+				//获取当前省份id
+				var currProId =document.getElementById("province").value;
+				if (currProId == '') 
+					return false;
+				var city = document.getElementById("city");
+				city.innerHTML = '';
+				var cityStr = '<option value=""></option>';
+				for (i = 0; i<arr.length; i++) {
+					var item = arr[i];
+bugger:
+					console.log(item);
+					if (item[2] == currProId) {
+						cityStr += '<option value="'+item[0]+'">'+item[1]+'</option>';
+					}
+				}
+				city.innerHTML = cityStr;
+			}
+		}
+	</script>
+</body>
+</html>
