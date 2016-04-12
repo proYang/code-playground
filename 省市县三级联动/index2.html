@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body bgcolor="#E0E0E0" onload="setup()">
+	多级关联菜单：
+	<form name="frm">
+		<select id="s1"><option>省份</option></select>
+		<select id="s2"><option>地级市</option></select>
+		<select id="s3"><option>市、县级市、县</option></select>
+	</form>
+	<script src="area.js"></script>
+	<script>
+		var s=["s1","s2","s3"];
+		var opt0 = ["省份","地级市","市、县级市、县"];
+		function setup()
+		{
+		    for(i=0;i<s .length-1;i++)
+		        document.getElementById(s[i]).onchange=new Function("change("+(i+1)+")");
+		    change(0);
+		}
+	</script>
+</body>
+</html>
