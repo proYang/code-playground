@@ -38,6 +38,7 @@ body{
 	height: 404px;
 	width: 3840px;
 	border-radius: 8px;
+	transition: left 1s;
 }
 #imageList img{
 	float: left;
