@@ -40,8 +40,7 @@ window.onload=function () {
 		case  -1920: temp=2; break;
 		case  -2880: temp=3; break;
 		}
-		change(temp-argument)
-		
+		change(temp-argument);
 	}
 	// 底部圆角样式
 	function circleStyle (argument) {
