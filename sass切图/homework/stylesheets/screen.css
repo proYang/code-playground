@@ -1,0 +1,179 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 11, ../sass/screen.scss */
+a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+/* line 18, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:visited {
+  color: #555;
+}
+/* line 21, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:focus {
+  color: #f00;
+}
+/* line 24, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: #00f;
+}
+/* line 27, ../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+a:active {
+  color: #f00;
+}
+
+/* line 16, ../sass/screen.scss */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 18, ../sass/screen.scss */
+header {
+  background: url(../imgs/allbgs.png) repeat-x 0px -326px;
+  height: 356px;
+}
+
+/* line 22, ../sass/screen.scss */
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+/* line 27, ../sass/screen.scss */
+.top-nav > ul {
+  float: left;
+  height: 30px;
+}
+/* line 30, ../sass/screen.scss */
+.top-nav > ul > li {
+  float: left;
+  line-height: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #c0c0c0;
+}
+/* line 36, ../sass/screen.scss */
+.top-nav > ul > li > span {
+  margin: 0 10px;
+  font-weight: bolder;
+}
+/* line 42, ../sass/screen.scss */
+.top-nav > div {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 46, ../sass/screen.scss */
+.top-nav > div #top-icon-phone {
+  margin-right: 30px;
+  display: inline-block;
+  line-height: 22px;
+  color: #fff;
+  background: url(../imgs/icons.png) no-repeat 0px -22px;
+  height: 22px;
+  padding-left: 22px;
+  font-size: 13px;
+}
+/* line 56, ../sass/screen.scss */
+.top-nav > div #top-icon-chat {
+  margin-right: 25px;
+  display: inline-block;
+  line-height: 22px;
+  color: #fff;
+  background: url(../imgs/icons.png) no-repeat 0px -44px;
+  height: 22px;
+  padding-left: 32px;
+  font-size: 13px;
+}
+/* line 66, ../sass/screen.scss */
+.top-nav > div #top-icon-flag1 {
+  display: inline-block;
+  background: url(../imgs/icons.png) no-repeat 0px 0px;
+  height: 11px;
+  padding-left: 22px;
+}
+/* line 72, ../sass/screen.scss */
+.top-nav > div #top-icon-flag2 {
+  display: inline-block;
+  background: url(../imgs/icons.png) no-repeat 0px -11px;
+  height: 11px;
+  padding-left: 22px;
+}
+
+/* line 81, ../sass/screen.scss */
+.middle-nav {
+  height: 100px;
+  background-image: url(../imgs/Layer3.png);
+}
