@@ -6,15 +6,15 @@
 	<link rel="stylesheet" href="stylesheets/screen.css">
 </head>
 <body>
-	<header>
+	<header id="main-header">
 		<div class="top-nav container clearfix">
 			<ul>
-				<li>Account Sign In<span>.</span></li>
-				<li>Register<span>.</span></li>
-				<li>Buyers Guide<span>.</span></li>
-				<li>About<span>.</span></li>
-				<li>Blog<span>.</span></li>
-				<li>Contact</li>
+				<li><a href="#">Account Sign In</a><span>.</span></li>
+				<li><a href="#">Register</a><span>.</span></li>
+				<li><a href="#">Buyers Guide</a><span>.</span></li>
+				<li><a href="#">About</a><span>.</span></li>
+				<li><a href="#">Blog</a><span>.</span></li>
+				<li><a href="#">Contact</a></li>
 			</ul>
 			<div>
 				<a href="#" id="top-icon-phone"><span>123.456.7890</span></a>
@@ -24,8 +24,43 @@
 			</div>
 		</div>
 		<div class="middle-nav container">
-			
+			<div id="bag-img" alt="bag"></div>
+			<p id="bag-tips">0 items in your bag</p>
+			<div id="bag-button"><a href="">Check Out</a></div>
+			<div id="middle-info">
+				<p>ECOMMERCE</p>
+				<p>WEBSITE</p>
+			</div>
+			<form action="#" POST="GET" class="nav-search">
+				<input type="text" placeholder="Search website">
+				<button></button>
+			</form>
 		</div>
+		<nav class="bottom-nav container">
+			<ul class="clearfix">
+				<li class="nav-active"><a href="#">HOME</a></li>
+				<li><a href="#">LATEST ARRIVALS</a></li>
+				<li><a href="#">MEN'S</a></li>
+				<li><a href="#">WOMEN'S</a></li>
+				<li><a href="#">KIDS</a></li>
+				<li><a href="#">BRANDS</a></li>
+				<li><a href="#">SALE</a></li>
+				<li><a href="#">GIFT CARDS</a></li>
+				<li><a href="#">FREEBIES</a></li>
+			</ul>
+		</nav>
 	</header>
+	<div class="content container">
+		<header id="content-header">
+			<p id="product-title">PRODUCT TITLE</p>
+			<p id="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit lacus dapibus ante mattis in adipiscing nibh placerat. Cras bibendum porta diam, non dignissim sapien malesuada vitae. </p>
+			<div id="bg-opacity"></div>
+		</header>
+		<aside id="categories"></aside>
+		<section id="products"></section>
+		<section id="newsletter"></section>
+		<section id="featured"></section>
+		<section id="payment"></section>
+	</div>
 </body>
 </html>

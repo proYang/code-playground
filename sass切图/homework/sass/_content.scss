@@ -1,0 +1,37 @@
+.content {
+	margin-top: -159px;
+}
+#content-header {
+	position: relative;
+	height: 310px;
+	background-image: url(../imgs/header.png);
+	#product-title {
+		position: absolute;
+		left: 32px;
+		font-size: 25px;
+		font-weight: bold;
+		color: #ffc600;
+		height: 53px;
+		line-height: 53px;
+		z-index: 1;
+	}
+	#product-description {
+		position: absolute;
+		left: 10px;
+		padding-left: 269px;
+		height: 53px;
+		line-height: 26.5px;
+		width: 940px;
+		color: #ffcccc;
+		font-size: 14px;
+		z-index: 1;
+
+	}
+	#bg-opacity {
+		position: absolute;
+		left: 10px;
+		background-color: rgba(0,0,0,.9);
+		height: 53px;
+		width: 940px;
+	}
+}
