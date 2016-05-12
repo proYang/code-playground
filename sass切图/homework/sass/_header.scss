@@ -16,26 +16,32 @@
   	>ul {
   		float: left;
   		height: 30px;
-	  	>li {
+  	}
+  	li {
 			float: left;
 			line-height: 30px;
 			font-family: $font-family;
 			font-size: 13px;
 			color: #c0c0c0;
-			>span {
+			&:after {
+				content: ".";
 				margin: 0 10px;
 				font-weight: bolder;
-				}
+			}
 			>a {
 				color: #c0c0c0;
 			}
+	}
+	@at-root .last-after{
+		&:after {
+				content: ""!important;
 		}
-  	}
+	}
 	>div {
 		float: right;
 		height: 30px;
 		line-height: 30px;
-		#top-icon-phone {
+		@at-root #top-icon-phone {
 			margin-right: 30px;
 			display: inline-block;
 			line-height: 22px;
@@ -45,7 +51,7 @@
 			padding-left:22px;
 			font-size: 13px;
 		}
-		#top-icon-chat {
+		@at-root #top-icon-chat {
 			margin-right: 25px;
 			display: inline-block;
 			line-height: 22px;
@@ -55,13 +61,13 @@
 			padding-left:32px;
 			font-size: 13px;
 		}
-		#top-icon-flag1 {
+		@at-root #top-icon-flag1 {
 			display: inline-block;
 			background:url(../imgs/icons.png) no-repeat 0px 0px;
 			height:11px;
 			padding-left:22px;
 		}
-		#top-icon-flag2 {
+		@at-root #top-icon-flag2 {
 			display: inline-block;
 			background:url(../imgs/icons.png) no-repeat 0px -11px;
 			height:11px;
@@ -156,7 +162,7 @@
 			text-align: center;
 			line-height: 28px;
 		}
-		.nav-active {
+		@at-root .nav-active {
 			background:url(../imgs/icons.png) no-repeat 0px -114px;
 		}
 	}

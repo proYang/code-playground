@@ -14,14 +14,17 @@ a {
 	color: #fff;
 	// @include link-colors(#333, #00f, #f00, #555, #f00);
 }
+input,
+button {
+	outline: none;
+}
 .clearfix:after {
 	content:".";
 	display:block;
 	height:0;
 	clear:both;
-	visibility:hidden
+	visibility:hidden;
 }
-
 .container {
 	margin: 0 auto;
 	width: 960px;
