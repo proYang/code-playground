@@ -3,8 +3,7 @@
 	// background:url(../imgs/allbgs.png) repeat-x 0px 0px;
 	height:61px;
 	word-spacing: 1px;
-	.container {
-		form {
+	form {
 			@extend .nav-search;
 			margin-left: 65px;
 			height: auto;
@@ -18,7 +17,6 @@
 				top: 11px;
 			}
 		}
-	}
 }
 #footer-search-bg{
 	position: absolute;
@@ -38,7 +36,7 @@
 }
 #footer-tips-left {
 	font-size: 14px;
-	color: #cbcbcb;
+	color: nth($color-list,10);
 	line-height: 61px;
 	vertical-align: middle;
 	display: inline-block;
@@ -57,22 +55,23 @@
 #footer-info {
 	// background:url(../imgs/allbgs.png) repeat-x 0px -75px;
 	height:242px;
-	ul {
+	dl {
 		width: 192px;
 		float: left;
-		h3 {
+		dt {
 			margin: 25px 0;
 			color: #fff;
 			font-size: 15px;
 			font-weight: bolder;
 		}
-		li >a {
-			color: #cfcfcf;
-			font-size: 13px;
-			line-height: 20px;
-			span {
-				color: #ffcc00;
-			}
+		
+	}
+	a {
+		color: #cfcfcf;
+		font-size: 13px;
+		line-height: 20px;
+		span {
+			color: #ffcc00;
 		}
 	}
 }

@@ -6,37 +6,38 @@
 }
 #content-header {
 	position: relative;
-	padding-top: 258px;
-	height: 53px;
-	background-image: url(../imgs/header.png);
+	// padding-top: 258px;
+	height: 311px;
+	// background-image: url(../imgs/header.png);
 	@at-root #product-title {
 		position: absolute;
 		left: 32px;
+		bottom: 0;
 		font-size: 25px;
 		font-weight: bold;
-		color: #ffc600;
+		color: nth($color-list,4);
 		line-height: 53px;
 		display: inline-block;
-		z-index: 1;
+		z-index: 2;
 	}
 	@at-root #product-description {
 		position: absolute;
 		left: 10px;
-		margin-top: 12px;
-		padding-left: 269px;
-		height: 53px;
-		// line-height: 26.5px;
+		bottom: 0;
+		height: 42px;
+		margin-left: 269px;
 		line-height: 18px;
 		width: 650px;
 		color: #ffcccc;
 		font-size: 13px;
-		display: inline-block;
+		display: block;
 		z-index: 1;
 
 	}
 	@at-root #bg-opacity {
 		position: absolute;
 		left: 10px;
+		bottom: 0;
 		background-color: rgba(0,0,0,.9);
 		height: 53px;
 		width: 940px;
@@ -54,28 +55,33 @@
 		height: 30px;
 		line-height: 30px;
 		background:url(../imgs/icons.png) no-repeat 0px -142px;
-		color: #fff;
+		color: nth($color-list,2);
 	}
 	ul {
 		padding: 15px 8px;
 		background-color: #ffeeb7;
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
-		li {
-			height: 30px;
-			line-height: 30px;
-			font-size: 12px;
-			border-bottom: 1px solid #fff;
-			&:last-child{
-				border: none;
-			}
+		
+	}
+	 .cate-selected a {
+		color: nth($color-list,6);
+	}
+	li {
+		height: 30px;
+		line-height: 30px;
+		font-size: 12px;
+		border-bottom: 1px solid #fff;
+		&:last-child {
+			border: none;
 		}
-		@at-root .cate-selected a {
-			color: #b20e00;
+		:hover {
+			color: nth($color-list,6);
 		}
-		a {
-			color: #434343;
-		}
+	}
+	a {
+		color: nth($color-list,7);
+		font-weight: bold;
 	}
 }
 
@@ -86,16 +92,16 @@
 	width: 706px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #cdcdc8;
-	form {
+	@at-root.products-form {
 		label {
 			font-size: 12px;
 			font-weight: bold;
-			color: #747474;
+			color: nth($color-list,8);
 		}
 		select {
 			margin-right: 10px;
 			font-size: 12px;
-			color: #747474;
+			color: nth($color-list,7);
 		}
 		>span {
 			margin-left: 100px;
@@ -104,7 +110,7 @@
 				color: #999;
 			}
 			span {
-				color: #b20e00;
+				color: nth($color-list,5);
 			}
 		}
 	}
@@ -119,15 +125,13 @@
 		li {
 			float: left;
 			width: 156px;
-			margin-right: 28px;
-			p {
-				a {
-					color: #666;
-				}
-				span {
-					color: #b20e00;
-				}	
+			margin-right: 26.5px;
+			a {
+				color: #666;
 			}
+			span {
+				color: nth($color-list,5);
+			}	
 			@at-root .product-name {
 				margin-top: 10px;
 				font-size: 15px;
@@ -144,17 +148,24 @@
 		width: 706px-255px;
 		li {
 			float: left;
+			margin-right: 1px;
 			padding: 0 6px;
 			font-size: 14px;
 			height: 20px;
 			line-height: 20px;
 			text-align: center;
 			a {
-				color: #b20e00;
+				color: nth($color-list,5);
+			}
+			&:hover {
+				background-color: nth($color-list,5);
+				a {
+					color: #fff;
+				}
 			}
 		}
-		@at-root .page-selected {
-			background-color: #b20e00;
+		.page-selected {
+			background-color: nth($color-list,5);
 			a {
 				color: #fff;
 			}
@@ -178,6 +189,8 @@
 	input {
 		margin-top: 13px;
 		width: 175px;
+		height: 25px;
+		line-height: 25px;
 		border:1px solid;
 		border-top-color: #9c9c9c;
 		border-left-color: #c0c0c0;
@@ -202,10 +215,6 @@
 			padding: 8px 0;
 			border-top: 1px solid #fff;
 			font-size: 13px;
-			span {
-				display: inline-block;
-				vertical-align: middle;
-			}
 			@at-root .join-icons {
 				height:32px;
 				width: 34px;
@@ -213,9 +222,13 @@
 			@at-root .join-info {
 				width: 179px-34px;
 				line-height: 18px;
-				color: #434343;
+				color: nth($color-list,7);
 				font-size: 13px;
 			}
+		}
+		span {
+				display: inline-block;
+				vertical-align: middle;
 		}
 	}
 }
@@ -267,9 +280,12 @@
 			font-size: 12px;
 			text-align: center;
 			a {
-				margin-top: 10px;
+				img {
+					display: block;
+					margin-bottom: 10px;
+				}
 				display: inline-block;
-				color: #660000;
+				color: nth($color-list,8);
 			}
 		}
 	}
