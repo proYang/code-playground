@@ -1,0 +1,112 @@
+// 设置轮播图图片高度、宽度、数量、圆角
+$img-height: 404px;
+$img-width: 960px;
+$img-num: 4;
+$img-radius: 8px;
+
+// 设置轮播图底部小圆点
+//content高度||宽度
+$circle-content-size: 13px;
+//border宽度
+$circle-border-size: 2px;
+//小圆点的左右margin间距
+$circle-margin-size: 5px;
+
+@font-face {font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot'); /* IE9*/
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+body {
+	width: 100%;
+	margin: 0;
+    padding: 0;
+	background-color: #dac8a5;
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:40px;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -$img-height/2;
+	margin-left: -$img-width/2;
+
+	height: $img-height;
+	width: $img-width;
+	border-radius: $img-radius;
+	overflow: hidden;
+	@at-root #image-list {
+		position: absolute;
+		height: $img-height;
+		width: $img-width*$img-num;
+		border-radius: $img-radius;
+		transition: left 1s;
+		img {
+			float: left;
+			height: $img-height;
+			width: $img-width;
+		}
+	}
+	@at-root .circle {
+		margin: 0 $circle-margin-size;
+		float: left;
+		height: $circle-content-size;
+		width: $circle-content-size;
+		border: $circle-border-size solid #fff;
+		border-radius: 50%;
+		/*background-color: #fff;*/
+		list-style: none;
+		cursor: pointer;
+	}
+	ul {
+		position: absolute;
+		left: 50%;
+		width: ($circle-content-size+$circle-border-size*2+$circle-margin-size*2)*$img-num;
+		bottom: 20px;
+		margin-left: -($circle-content-size+$circle-border-size*2+$circle-margin-size*2)*$img-num/2;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	@at-root #pre,#next {
+		position: absolute;
+		top: $img-height/2;
+		margin-top: -40px;
+		height: 80px;
+		width: 50px;
+		text-align: center;
+		cursor: pointer;
+		line-height: 80px;
+		color: #aaa;
+		background-color: rgba(0,0,0,.5);
+		transition: all .2s;
+	}
+	@at-root #pre {
+		left: 0;
+	}
+	@at-root #next {
+		right: 0;
+	}
+	@at-root #next:active{
+		margin-right: -5px;
+	}
+	@at-root #pre:active{
+		margin-left: -5px;
+	}
+
+}
+
+
