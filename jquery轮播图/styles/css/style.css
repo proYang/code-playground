@@ -19,8 +19,7 @@ body {
     left: 0;
     height: 404px;
     width: 3840px;
-    border-radius: 8px;
-    transition: left 1s; }
+    border-radius: 8px; }
     #image-list img {
       float: left;
       height: 404px;

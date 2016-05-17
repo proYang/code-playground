@@ -19,40 +19,44 @@ require(['jquery'],function(){
         var pre = $("#pre");
         var next = $("#next");
         var index = 0;
-        var interval = 3000;
+        var interval = 2000;
         var timer;
 
-        play();
         conatiner.hover(stop, play);
 
         pre.bind("click", function () {
-            index--;
-            animate (imageWidth);
+            if (!imageWrap.is(":animated")) {
+                index--;
+                animate (imageWidth);
+            }
         });
 
         next.bind("click", function () {
-            index++;
-            animate (-imageWidth);
+            if (!imageWrap.is(":animated")) {
+                index++;
+                animate (-imageWidth);
+            }
         });
 
         circleList.children().bind('click', function () {
-                var thisIndex = $(this).index();
-                var offset = -imageWidth * (thisIndex - index);
+            var thisIndex = $(this).index();
+            var offset = -imageWidth * (thisIndex - index);
+            if (!imageWrap.is(":animated")) {
                 animate(offset);
                 index = thisIndex;
                 showButton();
+            }
        });
 
         function animate (offset) {
-            var newLeft = parseInt(imageWrap.css("left")) + offset;
             if (index == imageNum) {
                 index = 0;
-                newLeft = 0;
+                offset = imageWidth * (imageNum-1);
             } else if (index == -1) {
                 index = 3;
-                newLeft = -imageWidth * (imageNum-1) + "px";
+                offset = -imageWidth * (imageNum-1);
             }
-            imageWrap.css("left",newLeft);
+            imageWrap.animate({left: "+=" + offset}, 1000);
             showButton();
         }
         function showButton () {

@@ -37,7 +37,7 @@ body {
 		height: $img-height;
 		width: $img-width*$img-num;
 		border-radius: $img-radius;
-		transition: left 1s;
+		// transition: left 1s;
 		img {
 			float: left;
 			height: $img-height;
