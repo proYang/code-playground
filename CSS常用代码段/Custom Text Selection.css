@@ -1,0 +1,10 @@
+::selection { background: #e2eae2; }
+::-moz-selection { background: #e2eae2; }
+::-webkit-selection { background: #e2eae2; }
+/*
+*Some newer web browsers will allow you to define the highlight color on your webpage.
+*This is set to light blue by default, 
+*but you can setup any color value which tickles your fancy. 
+*This snippet includes the typical ::selection target 
+*along with vendor prefixes for Webkit and Mozilla.
+*/

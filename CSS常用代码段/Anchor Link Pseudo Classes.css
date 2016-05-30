@@ -1,0 +1,10 @@
+a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: red; }
+a:active { color: yellow; }
+/*
+*Most CSS developers know about the anchor link styles and :hover effects. 
+*But I wanted to include this small code snippet as a reference for newcomers. 
+*These are the four default states for an anchor link, and also a few other HTML elements. 
+*Keep this handy until you can memorize some of the more obscure ones.
+*/

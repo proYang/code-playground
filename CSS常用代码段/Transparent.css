@@ -1,0 +1,12 @@
+.transparent {
+    filter: alpha(opacity=50); /* internet explorer */
+    -khtml-opacity: 0.5;      /* khtml, old safari */
+    -moz-opacity: 0.5;       /* mozilla, netscape */
+    opacity: 0.5;           /* fx, safari, opera */
+}
+/*
+*Some of the newer CSS3 properties have pampered us into thinking 
+*they may be applied everywhere. Unfortunately opacity is one such example 
+*where CSS still requires some minor updates. 
+*Appending the filter property should handle any older versions of IE with grace.
+*/
