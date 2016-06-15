@@ -1,0 +1,41 @@
+body{
+	font-family:Arial,Helvetica,sans-serif;
+}
+#address{
+	text-align: center;
+}
+.container{
+	margin: 0 auto;
+	height: auto;
+	width: 200px;
+	overflow: hidden;
+}
+#weather{
+	width: 1400px;
+	height: auto;
+	overflow: hidden;
+	transition: all 1s;
+}
+.now{
+	margin: 0px;
+	float: left;
+	width: 200px;
+	background-color: #ace;
+	color: #fff;
+}
+.weather{
+	margin-right: 20px;
+	font-size: 16px;
+	text-align: right;
+	line-height: 30px;
+}
+.tmp{
+	margin-right: 20px;
+	text-align: right;
+}
+.time{
+	margin-right: 20px;
+	font-size: 14px;
+	text-align: right;
+	line-height: 30px;
+} 
