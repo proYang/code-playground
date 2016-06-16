@@ -1,0 +1,81 @@
+﻿
+
+
+
+摘自《HTML5与CSS3权威指南》:
+	创建Promise对象:
+		var promise = new Promise(function (resolve, reject) {
+			
+			if () {
+				
+				// 正确执行
+				resolve();
+			}
+			else {
+				
+				// 处理失败
+				// 使用Error好处它可以捕捉到一个错误堆栈(即文件位置和错误代码的行列数——>) 使调试更加方便 能快速定位问题
+				resolve(Error("处理失败!"));
+			}
+		});
+		
+		var promise = Promise.resolve(value);
+		
+		var promise = Promise.reject(value);
+		
+	Promise对象的方法:
+		A、then()——————链式调用
+			指定成功和失败时的函数: promise.then(suc_fn, fail_fn);
+			只指定成功的函数: promise.then(suc_fn);
+			只指定失败的函数: promise.then(undefined, fail_fn);
+		B、catch(error_fn)
+			promise.then(suc_fn).catch(error_fn);
+		C、resolve(value)——————确定结果(成功)
+		D、reject(value)———————确定结果(失败)
+	
+	Promise构造函数(类)的静态方法:
+		A、resolve(value)
+			value为Promise对象: 根据传入的Promise对象复制一个新的Promise对象
+			value为非Promise对象的其他值: 创建一个以这个值为肯定结果(即把这个值传递给Promise构造函数参数值回调函数中的resolve回调函数的参数)的Promise对象
+			不指定参数值: 创建一个以"undefined"为肯定结果的Promise对象
+		B、reject(value)
+			value为Promise对象: 根据传入的Promise对象复制一个新的Promise对象
+			value为非Promise对象的其他值: 创建一个以这个值为否定结果(即把这个值传递给Promise构造函数参数值回调函数中的reject回调函数的参数)的Promise对象
+			不指定参数值: 创建一个以"undefined"为否定结果的Promise对象
+		C、all([promise])
+			参数: 一个Promise对象数组作为参数并创建一个当所有执行结果都已成功时返回肯定结果的Promise对象
+				在该对象的then方法中会得到一个结果数组(无论对象的肯定结果如何 该数组的元素为作为参数Promise对象的resolve()的参数) 该结果数组与传入的Promise对象数组顺序保持一致
+		D、race([promise])
+			参数: 一个Promise对象数组作为参数 当数组中任何元素返回肯定结果时Promise.race方法立即返回肯定结果 
+			当数组中任何元素返回否定结果时Promise.race方法立即返回否定结果(即返回第一个肯定或否定结果)
+				
+	Promise异步操作的用法——HTML的demo:
+		1、链式调用then()方法
+			promise.then().then()...
+		2、将异步操作队列化
+			当从一个then方法的作为参数值的回调函数进行返回时，
+				如果返回一个非Promise对象 下一个then方法将被立即调用 并使用该返回值
+				如果返回一个Promise对象 下一个then方法将对其进行等待 直到这个Promise对象的参数值回调函数中的处理结果确定(肯定[resolve()]或者[reject()])以后才会被调用
+				
+		3、异常处理
+			A、promise.then(suc_fn, fail_fn);
+			
+			B、promise.then(suc_fn).catch(fail_fn); // 简明写法 增强可读性
+				等同于promise.then(suc_fn).then(undefined, fail_fn);
+			PS: Promise对象返回否定(失败)结果之后会跳转到第一个配置了否定回调的then方法(或catch方法 两者含义相同)
+			
+			C、Promise对象的否定回调函数调用:
+				1、Promise.reject()显示调用
+				2、Promise对象的构造函数中抛出的错误进行隐式调用
+			
+		4、创建序列——由用户来决定Promise对象的then方法的调用次数
+			
+		
+	
+		
+		
+		
+		
+		
+		
+		

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>
+			读取txt
+		</title>
+	</head>
+	<body>
+		<input type="file" id="input">
+		<span id="preview">
+		</span>
+		<script type="text/javascript">
+			window.onload = function() { (function() {
+					var input = document.querySelector('#input');
+					var span = document.querySelector('#preview');
+					input.addEventListener('change',
+					function(e) {
+						handFile(e.target.files[0]);
+					});
+
+					function handFile(file) {
+						console.log('hand');
+						var reader = new FileReader();
+						reader.onload = function(e) {
+							span.innerText = e.target.result;
+						};
+						reader.readAsText(file);
+					}
+				})();
+			}
+		</script>
+	</body>
+</html>
