@@ -18,12 +18,13 @@ define(['jquery', '../util/funcTpl', 'juicer'], function($, funcTpl) {
 				            {'time': '17:00'},
 				            {'time': '18:00'}
 				        ]},
-				        {num: 4}
+				        {num: 4},
+				        {num: 5, inner: "<p>Hello Juicer</p>"}
 				    ]
 				};
 				
 				console.log(app.moduleTpl);
-				console.log(funcTpl);
+				console.log(funcTpl(app.moduleTpl));
 				var html = juicer(funcTpl(app.moduleTpl), data);
 				$('#content').html(html);
 			
@@ -40,6 +41,10 @@ define(['jquery', '../util/funcTpl', 'juicer'], function($, funcTpl) {
 			                   {@each it.inner as it2}
 			                       ${it2.time} <br />
 			                   {@/each}
+			               {@/if}
+			               {@if it.num==5}
+			               		${it.inner} <br />
+			               		$${it.inner} <br />
 			               {@/if}
 			           </li>
 			       {@/each}
