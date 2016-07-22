@@ -1,0 +1,46 @@
+.box1 {
+	display: flex;
+	width: 10.0rem;
+	flex-direction: column;
+}
+.items1 {
+	height: 1rem;
+	width: 1rem;
+	margin: auto;
+	background-color: #ace;
+}
+
+
+.box2 {
+	display: flex;
+	width: 10.0rem;
+	height: auto;
+	/*主轴方向 轴线换行*/
+	/*flex-direction: row;*/
+	/*flex-wrap: wrap;*/
+	flex-flow: row nowrap;
+
+	/*主轴对齐方式*/
+	justify-content: space-between;
+
+	/*交叉轴对齐方式*/
+	/*align-items: flex-start;*/
+	/*align-items: flex-end;*/
+	/*align-items: center;*/
+	/*align-items: baseline;项目的第一行文字的基线对齐。*/
+	/*align-items: stretch;如果项目未设置高度或设为auto，将占满整个容器的高度。*/
+
+	/*多轴对齐方式*/
+	/*align-items: flex-start;
+	align-items: flex-end;
+	align-items: center;
+	align-items: stretch;
+	align-items: space-between;
+	align-items: space-around;
+*/
+}
+.items2 {
+	height: 1rem;
+	width: 1rem;
+	background-color: #afc;
+}
