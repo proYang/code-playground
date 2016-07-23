@@ -1,17 +1,22 @@
 .box1 {
+	display: -webkit-box;
 	display: flex;
 	width: 10.0rem;
-	flex-direction: column;
+	        -webkit-box-orient: horizontal;
+	        -webkit-box-direction: normal;
+	                flex-direction: row;
+	justify-content: space-around;
 }
 .items1 {
 	height: 1rem;
 	width: 1rem;
-	margin: auto;
+	/*margin: auto;*/
 	background-color: #ace;
 }
 
 
 .box2 {
+	display: -webkit-box;
 	display: flex;
 	width: 10.0rem;
 	height: auto;
@@ -21,7 +26,8 @@
 	flex-flow: row nowrap;
 
 	/*主轴对齐方式*/
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	        justify-content: space-between;
 
 	/*交叉轴对齐方式*/
 	/*align-items: flex-start;*/
@@ -43,4 +49,26 @@
 	height: 1rem;
 	width: 1rem;
 	background-color: #afc;
+}
+.order4 {
+/*	        -webkit-box-ordinal-group: 0;
+	                order: -1;*/
+	                -webkit-box-flex: 2;
+	                        flex-grow: 2;
+}
+.order5 {
+	      /*  -webkit-box-ordinal-group: 6;
+	                order: 5;*/
+	                flex-shrink: 2;
+}
+
+.box3 {
+	display: flex;
+}
+.input-icon {
+	width: 0.3125rem;
+	height: 0.5rem;
+}
+.box3 >input {
+	flex: 1;
 }
