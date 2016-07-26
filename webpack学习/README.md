@@ -1,0 +1,2 @@
+- npm install安装依赖模块
+- 参考资料：[webpack中文文档](http://zhaoda.net/webpack-handbook/preface.html)
