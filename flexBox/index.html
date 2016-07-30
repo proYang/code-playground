@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="lib/flexible.debug.css">
 	<script src="lib/flexible.debug.js"></script>
 	<link rel="stylesheet" href="style.css">
+	<script src="lib/iscroll-probe.js"></script>
 </head>
 <body>
 	<div class="box1">
@@ -30,5 +31,26 @@
 		<span class="input-icon"></span>
 		<input type="text">
 	</div>
+	<div class="wrapper">
+		<ul>
+			<li class="items"></li>
+			<li class="items"></li>
+			<li class="items"></li>
+			<li class="items"></li>
+			<li class="items"></li>
+			<li class="items"></li>
+			<li class="items"></li>
+			<li class="items"></li>
+		</ul>
+	</div>
+	<script>
+		var myscroll;
+		window.onload = function() {
+			var myScroll = new IScroll('.wrapper', {
+				scrollX: true,scrollY: false,
+			});
+			console.log(myScroll);
+		}
+	</script>
 </body>
 </html>

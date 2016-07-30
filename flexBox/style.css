@@ -72,3 +72,18 @@
 .box3 >input {
 	flex: 1;
 }
+.wrapper {
+	height: 2.5rem;
+	/*width: 34rem;*/
+	overflow: hidden;
+}
+.wrapper >ul {
+	width: 40rem;
+}
+.items {
+	display: inline-block;
+	margin: 0 0.25rem;
+	height: 2.5rem;
+	width: 3.75rem;
+	background-color: #acf;
+}
