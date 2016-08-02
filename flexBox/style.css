@@ -87,3 +87,36 @@
 	width: 3.75rem;
 	background-color: #acf;
 }
+
+
+#waterfall {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 100vw;
+}
+#waterfall >img {
+	width: 33.3%;
+}
+
+
+#HolyGrail_container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.HolyGrail_items {
+}
+.HolyGrail_top {
+	height: 10vh;
+	background-color: #dce;
+}
+.HolyGrail_center {
+	flex: 1;
+	overflow: scroll;
+	font-size: 25px;
+}
+.HolyGrail_footer {
+	height: 10vh;
+	background-color: #acf;
+}
