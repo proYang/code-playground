@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Router</title>
+</head>
+<body>
+	<ul> 
+	    <li><a href="#/">turn white</a></li> 
+	    <li><a href="#/blue">turn blue</a></li> 
+	    <li><a href="#/green">turn green</a></li> 
+	</ul> 
+	<script type="text/javascript" src='router.js'></script>
+	<script>
+		// window.onload = function () {
+			var content = document.querySelector('body');
+			// change Page anything
+			function changeBgColor(color) {
+			    content.style.backgroundColor = color;
+			}
+			Router.route('/', function() {
+			    changeBgColor('white');
+			});
+			Router.route('/blue', function() {
+			    changeBgColor('blue');
+			});
+			Router.route('/green', function() {
+			    changeBgColor('green');
+			});
+		// }
+	</script>
+</body>
+</html>
