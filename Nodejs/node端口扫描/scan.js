@@ -1,10 +1,18 @@
 let result = [];
-scan('www.slane.cn', 1, 65535, function (result) {
-    console.log('开启端口:');
-    for (let i = 0; i < result.length; i++) {
-        console.log('端口:' + result[i]);
-    }
-});
+main(process.argv.slice(2));
+
+function main(argv) {
+    // console.log(argv);
+    let host = argv[0] || 'www.slane.cn',
+        start = argv[1] || 1,
+        end = argv[2] || 65535;
+    scan(host, start, end, function (result) {
+        console.log('开启端口:');
+        for (let i = 0; i < result.length; i++) {
+            console.log('端口:' + result[i]);
+        }
+    });
+}
 
 
 function scan (host, start, end, callback) {
