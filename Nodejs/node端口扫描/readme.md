@@ -1,5 +1,5 @@
-### node�˿�ɨ�蹤��
+﻿### node端口扫描工具
 - - - 
-##### ʹ�÷���  
+##### 使用方法  
 	  
 	node scan.js www.slane.cn 1 65535
