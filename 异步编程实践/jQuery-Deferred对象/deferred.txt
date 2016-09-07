@@ -1,0 +1,35 @@
+
+
+
+PS: 对于jQuery1.5版本以上
+deffered对象——————deferred对象就是jQuery的回调函数解决方案
+	deferred对象的最大优点: 把这一套回调函数接口 从ajax操作扩展到了所有操作
+	deferred对象的相关方法: http://api.jquery.com/category/deferred-object/
+	jQuery规定: deferred对象有三种执行状态----未完成 已完成 已失败
+	【
+		如果执行状态是"已完成"(resolved) deferred对象立刻调用done()方法指定的回调函数
+		如果执行状态是"已失败" 调用fail()方法指定的回调函数 
+		如果执行状态是"未完成" 则继续等待 或者调用progress()方法指定的回调函数(jQuery1.7版本添加)
+	】
+	
+	$.when() 			为多个操作指定回调函数且参数只能是deferred对象  只要有一个操作是reject() 则是失败调用 fail()
+	deferred.done()		当操作成功时的回调函数
+	deferred.fail()		当操作失败时的回调函数
+	$.Deferred()		可以接受一个函数名(注意!!!是函数名)作为参数 $.Deferred()所生成的deferred对象将作为这个函数的默认参数
+	deffered.resolve()	将deffered对象的执行状态从"未完成"改为"已完成" 从而触发done()方法
+	deffered.reject()	将deffered对象的执行状态从"未完成"改为"已失败" 从而触发fail()方法
+	deferred.promise()	在原来的deferred对象上返回另一个deferred对象 后者只开放与改变执行状态无关的方法 屏蔽与改变执行状态有关的方法 从而使得执行状态不能被改变
+	deferred.then()     把done()和fail()合在一起写 即then(successFunc, failureFunc )【只能有两个参数】
+	deferred.always()	不管调用的是deferred.resolve()还是deferred.reject() 最后总是执行
+	
+	
+	1、添加多个回调函数
+	2、为多个事件指定一个回调函数
+	3、普通操作函数的回调函数接口
+		A、防止执行状态被外部改变的方法
+			a、定义局部的deferred对象 普通操作函数返回一个promise对象
+			b、使用deferred对象的建构函数$.Deferred()【在该函数调用后面直接调用reject()或者resovle()依旧可以实现在外部修改deferred对象的执行状态】
+			c、直接在wait对象上部署deferred接口【在dtd对象上直接调用reject()或者resovle() 可以实现在外部修改deferred对象的执行状态】
+	
+	
+	

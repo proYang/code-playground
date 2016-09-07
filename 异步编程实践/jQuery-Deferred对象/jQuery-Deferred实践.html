@@ -101,14 +101,22 @@
 
 
 //        6.普通操作的回调函数接口（中）
-//  **********************用这种啊，和$.ajax()很像************************
 //另一种防止执行状态被外部改变的方法，是使用deferred对象的建构函数$.Deferred()。
 //这时，wait函数还是保持不变，我们直接把它传入$.Deferred()：
-            var wait = function(){
+            var wait = function(dtd){
+                console.log(dtd);
                 var tasks = function(){
-                    alert("执行完毕！");
+
+                    alert("执行完毕!");
+
+                    dtd.resolve(); // 改变Deferred对象的执行状态
+
                 };
-                setTimeout(tasks, 5000);
+
+                setTimeout(tasks, 3000);
+
+                return dtd.promise();
+
             };
             $.Deferred(wait)
                     .done(function(){ alert("哈哈，成功了！"); })

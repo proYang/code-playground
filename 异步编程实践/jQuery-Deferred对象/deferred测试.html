@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>deferred测试</title>
+</head>
+<body>
+	
+	<h1>deferred测试</h1>
+
+	<script src="jquery-2.1.4.min.js"></script>
+	<script>
+		(function () {
+			"use strict";
+
+			// 添加多个回调函数
+			function demo1() {
+
+				$.ajax("deferred测试.html")
+				　　.done(function(){ alert("哈哈，成功了！");} )
+				　　.fail(function(){ alert("出错啦！"); } )
+				　　.done(function(){ alert("第二个回调函数！");} );
+			}
+
+			// demo1();
+
+			// 为多个事件指定一个回调函数
+			function demo2() {
+				
+				$.when($.ajax("test1.html"), $.ajax("test2.html"))
+				　　.done(function(){ alert("哈哈，成功了！"); })
+				　　.fail(function(){ alert("出错啦！"); });
+			}
+
+			// demo2();
+
+			// 普通操作的回调函数接口——————防止执行状态被外部改变的方法
+			// a、定义局部的deferred对象 普通操作函数返回一个promise对象
+			function demo3() {
+				
+			　　var wait = function(){
+
+					var dtd = $.Deferred(); // 新建一个局部的Deferred对象
+
+			　　　　var tasks = function(){
+
+			　　　　　　alert("执行完毕1!");
+
+			　　　　　　dtd.reject(); // 改变Deferred对象的执行状态
+
+			　　　　};
+
+			　　　　setTimeout(tasks, 3000);
+
+			　　　　return dtd.promise();
+
+			　　};
+
+				var wait2 = function(){
+
+					var dtd = $.Deferred(); // 新建一个局部的Deferred对象
+
+			　　　　var tasks = function(){
+
+			　　　　　　alert("执行完毕2!");
+
+			　　　　　　dtd.resolve(); // 改变Deferred对象的执行状态
+
+			　　　　};
+
+			　　　　setTimeout(tasks, 1000);
+
+			　　　　return dtd.promise();
+
+			　　};
+
+			　　$.when(wait(), wait2())
+
+			　　.done(function(){ alert("哈哈，成功了！"); })
+
+			　　.fail(function(){ alert("出错啦！"); });
+
+				// d1.resolve(); // 直接在执行函数外面修改deferred对象的执行状态
+			}
+
+			demo3();
+
+			// 普通操作的回调函数接口——————防止执行状态被外部改变的方法
+			// a、定义局部的deferred对象 普通操作函数返回一个promise对象
+			function demo4() {
+			
+				var wait = function(dtd){
+
+			　　　　var tasks = function(){
+
+			　　　　　　alert("执行完毕1!");
+
+			　　　　　　dtd.resolve(); // 改变Deferred对象的执行状态
+
+			　　　　};
+
+			　　　　setTimeout(tasks, 3000);
+
+			　　　　return dtd.promise();
+
+			　　};
+
+				var wait2 = function(dtd){
+
+			　　　　var tasks = function(){
+
+			　　　　　　alert("执行完毕2!");
+
+			　　　　　　dtd.resolve(); // 改变Deferred对象的执行状态
+
+			　　　　};
+
+			　　　　setTimeout(tasks, 3000);
+
+			　　　　return dtd.promise();
+
+			　　};
+
+				/*
+					$.Deferred()接受一个函数名(注意!!!是函数名)作为参数 $.Deferred()所生成的deferred对象将作为这个函数的默认参数  直接在后面调用reject()或resovle()依旧可以在外面改变Deferred对象的执行状态
+				 */
+			　　$.Deferred(wait2).reject()  
+			　　.done(function(){ alert("哈哈，成功了！"); })
+			　　.fail(function(){ alert("出错啦！"); });
+
+			}
+
+			// demo4();
+
+			// 直接在wait对象上部署deferred接口
+			function demo5() {
+
+				var dtd = $.Deferred(); // 生成Deferred对象
+
+			　　var wait = function(dtd){
+
+			　　　　var tasks = function(){
+
+			　　　　　　alert("执行完毕！");
+			　　　　　　dtd.resolve(); // 改变Deferred对象的执行状态
+			　　　　};
+
+			　　　　setTimeout(tasks, 3000);
+			　　};
+
+				// dtd.reject(); // 外部改变Deferred对象的执行状态
+
+			　　dtd.promise(wait); // 将wait加工后 能调用done fail
+
+			　　wait.done(function(){ alert("哈哈，成功了！"); })
+			　　.fail(function(){ alert("出错啦！"); })
+				.fail(function(){ alert("出错啦！222222222"); });
+
+			　　wait(dtd);
+			}
+
+			// demo5();
+		　　
+		}());
+	</script>
+</body>
+</html>
