@@ -5,11 +5,11 @@ const fs = require('fs');
 // var async = require('async');
 let pageUrls = [];
 let index = 0;
-// for(var i=130480 ; i<= 136699; i++){
-	pageUrls.push('https://isux.tencent.com/phonegraphy.html');
+for(var i=130480 ; i<= 136699; i++){
+// 	pageUrls.push('https://isux.tencent.com/phonegraphy.html');
 	// pageUrls.push('https://ideras.me/blog/pure-css-columns-waterfall.html');
-	// pageUrls.push('http://64ce.com/pic/11/' + i + '.html');
-// }
+	pageUrls.push('http://48cb.com/pic/11/' + i + '.html');
+}
 // for (var i = 119600; i < 119627; i++) {
 // 	requrl='http://74ct.com/pic/11/'+i+'.html';
 // 	originRequest(requrl);
@@ -28,7 +28,7 @@ var timer = setInterval(function () {
 		clearInterval(timer);
 		console.log("have finished");
 	}
-}, 1000);
+}, 5000);
 // 并发连接数的计数器
 // var concurrencyCount = 0;
 // var fetchUrl = function (url, callback) {
@@ -90,6 +90,7 @@ function praseData(data) {
 		let filename = parseUrlForFileName(imgsrc);
 		downloadImg(imgsrc, filename).then(function () {
 			console.log('NO' + i +' done');
+            console.log(filename + 'done\n');
 		});
 	}
 }
@@ -117,14 +118,26 @@ function parseUrlForFileName(address) {
 			if (err) {
 				reject(err);
 			} else {
-				request(url)
-					.pipe(fs.createWriteStream('images/' + filename))
-					.on('finish', function() {
-						resolve();
-					})
-					.on('error', function(err){
-						console.log("下载失败" + err);
-					});
+				fs.readdir('images/', function (err) {
+					if (err){
+						//若目录不存在则创建
+						console.log('创建目录 images/');
+						fs.mkdir('images/', function (err) {
+							if (err) {
+								return console.error(err);
+							}
+							console.log("目录创建成功。");
+						})
+					}
+					request(url)
+						.pipe(fs.createWriteStream('images/' + filename))
+						.on('finish', function() {
+							resolve(filename);
+						})
+						.on('error', function(err){
+							console.log("下载失败" + err);
+						});
+				})
 			}
 		})
 	});
