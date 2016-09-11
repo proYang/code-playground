@@ -103,40 +103,40 @@
 //        6.普通操作的回调函数接口（中）
 //另一种防止执行状态被外部改变的方法，是使用deferred对象的建构函数$.Deferred()。
 //这时，wait函数还是保持不变，我们直接把它传入$.Deferred()：
-            var wait = function(dtd){
-                console.log(dtd);
-                var tasks = function(){
+            // var wait = function(dtd){
+            //     console.log(dtd);
+            //     var tasks = function(){
 
-                    alert("执行完毕!");
+            //         alert("执行完毕!");
 
-                    dtd.resolve(); // 改变Deferred对象的执行状态
+            //         dtd.resolve(); // 改变Deferred对象的执行状态
 
-                };
+            //     };
 
-                setTimeout(tasks, 3000);
+            //     setTimeout(tasks, 3000);
 
-                return dtd.promise();
+            //     return dtd.promise();
 
-            };
-            $.Deferred(wait)
-                    .done(function(){ alert("哈哈，成功了！"); })
-                    .fail(function(){ alert("出错啦！"); });
+            // };
+            // $.Deferred(wait)
+            //         .done(function(){ alert("哈哈，成功了！"); })
+            //         .fail(function(){ alert("出错啦！"); });
 
 //        7.普通操作的回调函数接口（下）
 //这里的关键是dtd.promise(wait)这一行，它的作用就是在wait对象上部署Deferred接口。
 // 正是因为有了这一行，后面才能直接在wait上面调用done()和fail()。
-//            var dtd = $.Deferred(); // 生成Deferred对象
-//            var wait = function(dtd){
-//                var tasks = function(){
-//                    alert("执行完毕！");
-//                    dtd.resolve(); // 改变Deferred对象的执行状态
-//                };
-//                setTimeout(tasks, 5000);
-//            };
-//            dtd.promise(wait);
-//            wait.done(function(){ alert("哈哈，成功了！"); })
-//                    .fail(function(){ alert("出错啦！"); });
-//            wait(dtd);
+           var dtd = $.Deferred(); // 生成Deferred对象
+           var wait = function(dtd){
+               var tasks = function(){
+                   alert("执行完毕！");
+                   dtd.resolve(); // 改变Deferred对象的执行状态
+               };
+               setTimeout(tasks, 5000);
+           };
+           dtd.promise(wait);
+           wait.done(function(){ alert("哈哈，成功了！"); })
+                   .fail(function(){ alert("出错啦！"); });
+           // wait(dtd);
     </script>
 </body>
 </html>
