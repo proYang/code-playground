@@ -1,11 +1,3 @@
-'use strict';
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * 
  * @author yxl
@@ -14,17 +6,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @description  mobile-lock锁屏组件
  * 
  */
-;(function (name, definition) {
+;(function(name, definition) {
     // 检测上下文环境是否为AMD或CMD
-    var hasDefine = typeof define === "function";
+    var hasDefine = typeof define === "function"
 
     if (hasDefine) {
-        define(definition);
+        define(definition)
     } else {
         // 将模块挂载到window对象
-        this[name] = definition();
+        this[name] = definition()
     }
-})('Lock', function () {
+})('Lock',function () {
     var Lock = {
 
         /**
@@ -126,12 +118,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @param {String} key
          * @private
          */
-        _useCallback: function _useCallback(key) {
-            var func = this[key];
-            var cv = typeof func === 'undefined' ? 'undefined' : (0, _typeof3.default)(func);
-            typeof func == 'function' ? func.call(this) : '';
+        _useCallback(key) {
+            var func = this[key]
+            var cv = typeof func
+            typeof func == 'function' ? func.call(this) : ''
         },
-
 
         /**
          * 绑定对应回调函数
@@ -140,19 +131,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @param {Object} options
          * @private
          */
-        _bindCallback: function _bindCallback(options) {
+        _bindCallback(options) {
             for (var key in options) {
                 if (options.hasOwnProperty(key)) {
                     if (typeof options[key] == 'function') {
-                        var item = key.split('');
-                        item.unshift('_');
-                        item = item.join('');
-                        this[item] = options[key];
+                        var item = key.split('')
+                        item.unshift('_')
+                        item = item.join('')
+                        this[item] = options[key]
                     }
                 }
             }
         },
-
 
         /**
          * 计算每个圆圈的位置信息
@@ -160,20 +150,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method _caculatePosition
          * @private
          */
-        _caculatePosition: function _caculatePosition() {
-            var n = this.num;
-            var r = this._r;
-            this._circles = [];
-            this._touchedList = [];
-            for (var i = 0; i < n; i++) {
-                // 行
-                for (var j = 0; j < n; j++) {
-                    // 列
+        _caculatePosition: function () {
+            var n = this.num
+            var r = this._r
+            this._circles = []
+            this._touchedList = []
+            for (var i = 0; i < n; i++) { // 行
+                for (var j = 0; j < n; j++) { // 列
                     this._circles.push({
                         x: j * 4 * r + 2 * r,
                         y: i * 4 * r + 2 * r,
                         r: r,
-                        touched: false });
+                        touched: false, // 是否已被选中
+                    });
                 }
             }
         },
@@ -184,19 +173,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method _drawCircle
          * @private
          */
-        _drawCircle: function _drawCircle() {
+        _drawCircle: function () {
             var circles = this._circles;
             for (var i = 0; i < circles.length; i++) {
                 this._content.beginPath();
                 this._content.arc(circles[i].x, circles[i].y, circles[i].r, 0, 2 * Math.PI, false);
                 if (!circles[i].touched) {
                     // 未点击状态
-                    this._content.strokeStyle = "#bbb"; // 画空心圆
+                    this._content.strokeStyle = "#bbb";// 画空心圆
                     this._content.stroke();
                 } else {
                     // 已点击状态
-                    this._content.fillStyle = "#ffa724"; // 画实心圆
-                    this._content.strokeStyle = "#fd8d00"; // 画空心圆
+                    this._content.fillStyle = "#ffa724";// 画实心圆
+                    this._content.strokeStyle = "#fd8d00";// 画空心圆
                     this._content.fill();
                     this._content.stroke();
                 }
@@ -210,25 +199,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method _drawCircle
          * @private
          */
-        _drawLine: function _drawLine(position) {
-            this._clearCanvas();
-            this._drawCircle();
+        _drawLine: function (position) {
+            this._clearCanvas()
+            this._drawCircle()
             for (var i = 0; i < this._touchedList.length - 1; i++) {
-                var startIndex = this._touchedList[i];
-                var endIndex = this._touchedList[i + 1];
-                var start = this._circles[startIndex];
-                var end = this._circles[endIndex];
+                var startIndex = this._touchedList[i]
+                var endIndex = this._touchedList[i + 1]
+                var start = this._circles[startIndex]
+                var end = this._circles[endIndex]
                 this._content.beginPath();
-                this._content.strokeStyle = "#e0281e"; // 画空心圆
+                this._content.strokeStyle = "#e0281e";// 画空心圆
                 this._content.moveTo(start.x, start.y);
                 this._content.lineTo(end.x, end.y);
                 this._content.stroke();
             }
-            if (!position || this._touchedList.length == 0) return;
-            startIndex = this._touchedList[this._touchedList.length - 1];
-            start = this._circles[startIndex];
-            end = position;
-            this._content.strokeStyle = "#e0281e"; // 画空心圆
+            if (!position || this._touchedList.length == 0) return
+            startIndex = this._touchedList[this._touchedList.length - 1]
+            start = this._circles[startIndex]
+            end = position
+            this._content.strokeStyle = "#e0281e";// 画空心圆
             this._content.beginPath();
             this._content.moveTo(start.x, start.y);
             this._content.lineTo(end.x, end.y);
@@ -242,18 +231,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @param {Object} position
          * @private
          */
-        _touchCircle: function _touchCircle(position) {
+        _touchCircle: function (position) {
             // 手指进入圆圈范围
             var circles = this._circles;
             for (var i = 0; i < circles.length; i++) {
                 if (position.x >= circles[i].x - circles[i].r && position.x <= circles[i].x + circles[i].r) {
                     if (position.y >= circles[i].y - circles[i].r && position.y <= circles[i].y + circles[i].r) {
                         if (circles[i].touched == false) {
-                            this._touchedList.push(i);
+                            this._touchedList.push(i)
                             circles[i].touched = true;
-                            this._clearCanvas();
-                            this._drawCircle();
-                            this._drawLine();
+                            this._clearCanvas()
+                            this._drawCircle()
+                            this._drawLine()
                         }
                     }
                 }
@@ -268,13 +257,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @returns {Object} position
          * @private
          */
-        _getPosition: function _getPosition(touch) {
+        _getPosition: function (touch) {
             // 获取触点在canvas中的位置
             var position = {
                 x: touch.clientX - this.element.offsetLeft,
                 y: touch.clientY - this.element.offsetTop
-            };
-            return position;
+            }
+            return position
         },
 
         /**
@@ -283,7 +272,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method _clearCanvas
          * @private
          */
-        _clearCanvas: function _clearCanvas() {
+        _clearCanvas: function () {
             // 擦除画布
             this._content.clearRect(0, 0, this._content.canvas.width, this._content.canvas.height);
         },
@@ -294,11 +283,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method _resetCanvas
          * @private
          */
-        _resetCanvas: function _resetCanvas() {
-            this._clearCanvas();
+        _resetCanvas: function () {
+            this._clearCanvas()
             // 重新计算位置
-            this._caculatePosition();
-            this._drawCircle();
+            this._caculatePosition()
+            this._drawCircle()
         },
 
         /**
@@ -307,30 +296,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method _addEvent
          * @private
          */
-        _addEvent: function _addEvent() {
-            var that = this;
+        _addEvent: function () {
+            var that = this
             this.element.addEventListener('touchstart', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
-                var position = that._getPosition(event.touches[0]);
-                that._touchCircle(position);
-            });
+                event.preventDefault()
+                event.stopPropagation()
+                var position = that._getPosition(event.touches[0])
+                that._touchCircle(position)
+            })
             this.element.addEventListener('touchmove', function (event) {
-                event.stopPropagation();
-                var position = that._getPosition(event.touches[0]);
-                that._touchCircle(position);
-                that._drawLine(position);
-            });
+                event.stopPropagation()
+                var position = that._getPosition(event.touches[0])
+                that._touchCircle(position)
+                that._drawLine(position)
+            })
             this.element.addEventListener('touchend', function () {
-                event.stopPropagation();
-                that._drawLine();
-                var password = that._touchedList.join('');
+                event.stopPropagation()
+                that._drawLine()
+                var password = that._touchedList.join('')
                 if (that._type == 'set') {
-                    that._setPassword(password);
+                    that._setPassword(password)
                 } else if (that._type == 'check') {
-                    that._checkPassword(password);
+                    that._checkPassword(password)
                 }
-            });
+            })
         },
 
         /**
@@ -339,31 +328,31 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method password
          * @private
          */
-        _setPassword: function _setPassword(password) {
+        _setPassword: function (password) {
             if (this._touchedList.length < this.length && this._touchedList.length > 0) {
                 // 不足用户设置长度，执行对应回调函数
-                this._useCallback('_deficiency');
-            } else if (this._touchedList.length > 0) {
+                this._useCallback('_deficiency')
+            } else if(this._touchedList.length > 0) {
                 if (this._lastTouchedList.length == 0) {
                     // 第一次输入图案
-                    this._lastTouchedList = password;
-                    this._useCallback('_firstSetPwd');
+                    this._lastTouchedList = password
+                    this._useCallback('_firstSetPwd')
                 } else {
                     // 第二次输入图案
                     if (this._lastTouchedList == password) {
                         // 两次密码一致
-                        this._lastTouchedList = '';
-                        this.util.setStorage('mobile_lock', password);
-                        this._useCallback('_setSuccess');
+                        this._lastTouchedList = ''
+                        this.util.setStorage('mobile_lock', password)
+                        this._useCallback('_setSuccess')
                     } else {
                         // 两次密码不一致
-                        this._lastTouchedList = '';
-                        this._useCallback('_setFail');
+                        this._lastTouchedList = ''
+                        this._useCallback('_setFail')
                     }
                 }
             }
             // 重置画布
-            this._resetCanvas();
+            this._resetCanvas()
         },
 
         /**
@@ -372,16 +361,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @method _checkPassword
          * @private
          */
-        _checkPassword: function _checkPassword(password) {
-            var localPwd = Lock.util.getStorage('mobile_lock');
+        _checkPassword: function (password) {
+            var localPwd = Lock.util.getStorage('mobile_lock')
             if (localPwd == password) {
-                this._useCallback('_checkSuccess');
+                this._useCallback('_checkSuccess')
             } else {
-                this._useCallback('_checkFail');
+                this._useCallback('_checkFail')
             }
             // 重置画布
-            this._resetCanvas();
+            this._resetCanvas()
         },
+
 
         /**
          * 初始化
@@ -390,16 +380,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @param {Object} options
          * @public
          */
-        init: function init(options) {
-            this.element = document.querySelector(options.element);
-            this.length = parseInt(options.length);
-            this.num = parseInt(options.num);
-            this._content = this.element.getContext('2d');
-            this._r = this._content.canvas.width / (4 * this.num);
-            this._caculatePosition();
-            this._drawCircle();
-            this._addEvent();
-            this._bindCallback(options);
+        init: function (options) {
+            this.element = document.querySelector(options.element)
+            this.length = parseInt(options.length)
+            this.num = parseInt(options.num)
+            this._content = this.element.getContext('2d')
+            this._r = this._content.canvas.width / (4 * this.num)
+            this._caculatePosition()
+            this._drawCircle()
+            this._addEvent()
+            this._bindCallback(options)
         },
 
         /**
@@ -409,21 +399,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
          * @param {String} type
          * @public
          */
-        switchState: function switchState(type) {
+        switchState: function (type) {
             if (this._type == 'set' && !type) {
                 //type 参数不存在，切换组件状态为'set'
-                this._type = 'check';
+                this._type = 'check'
             } else if (this._type == 'check' && !type) {
                 //type 参数不存在，切换组件状态为'check'
-                this._type = 'set';
+                this._type = 'set'
             } else if (type && (type == 'set' || type == 'check')) {
                 //type 参数存在，且为'check'或'set'之一, 切换到对应状态
-                this._type = type;
+                this._type = type
             } else {
-                console.error('The type [' + type + '] is not supposed');
+                console.error('The type [' + type + '] is not supposed')
             }
-        }
-    };
+        },
+    }
 
     /**
      * 工具类
@@ -431,16 +421,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
      * @class util
      */
     Lock.util = {
-        getStorage: function getStorage(item) {
-            return window.localStorage.getItem(item);
+        getStorage: function (item) {
+            return window.localStorage.getItem(item)
         },
-        setStorage: function setStorage(item, value) {
-            window.localStorage.setItem(item, value);
+        setStorage: function (item, value) {
+            window.localStorage.setItem(item, value)
         },
-        removeStorage: function removeStorage(item) {
-            window.localStorage.removeItem(item);
+        removeStorage: function (item) {
+            window.localStorage.removeItem(item)
         }
-    };
+    }
 
-    return Lock;
+    return Lock
 });
