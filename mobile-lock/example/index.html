@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mobile-lock</title>
+  <style>
+    body{
+      margin: 0;
+      background-color: #f0f0f2;
+    }
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 400;
+      height: 50px;
+      border-bottom: 1px solid #bcbcbc;
+      line-height: 50px;
+      text-align: center;
+      background-color: #f8f8f8;
+    }
+    p {
+      text-align: center;
+      margin: 10px auto;
+      min-height: 24px;
+      font-size: 18px;
+    }
+    canvas {
+      margin: 0 auto;
+      display: block;
+    }
+    .radio {
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h2>手势密码</h2>
+      <canvas id="J_canvas" width="350" height="350"></canvas>
+      <p id="J_message"></p>
+      <div id="J_radio_set" class="radio">
+        <input type="radio" id="set" checked="checked" name="sport" value="set">
+        <label name="set" class="checked" for="set">设置密码</label>
+      </div>
+      <div id="J_radio_check" class="radio">
+        <input type="radio" id="check" name="sport" value="check">
+        <label name="check" for="check">验证密码</label>
+      </div>
+  </div>
+ <!-- 引入组件 -->
+  <script src="scripts/mobile-lock.js"></script>
+  <script>
+        var $message = document.querySelector('#J_message')
+
+        Lock.init({
+          element: '#J_canvas',
+          num: 3,
+          length: 5,
+          deficiency:function(){
+            $message.innerHTML = '密码太短，至少需要'+ this.length +'个点'
+          },
+          firstSetPwd:function () {
+            $message.innerHTML = '请再次输入手势密码'
+          },
+          setSuccess:function(){
+            $message.innerHTML = '密码设置成功'
+          },
+          setFail:function(){
+            $message.innerHTML = '两次输入不一致'
+            setTimeout(function(){
+              $message.innerHTML = '已重置，请重新设置密码'
+            },800)
+          },
+          checkSuccess:function(){
+            $message.innerHTML = '密码正确！'
+          },
+          checkFail:function(){
+            $message.innerHTML = '密码错误！请重新输入'
+          },
+        })
+
+        document.querySelector('#J_radio_set').addEventListener('click', function(){
+          Lock.switchState('set')
+        })
+        document.querySelector('#J_radio_check').addEventListener('click', function(){
+          Lock.switchState('check')
+        })
+  </script>
+</body>
+</html>
