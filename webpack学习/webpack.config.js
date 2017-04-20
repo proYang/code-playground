@@ -1,16 +1,11 @@
-var webpack = require('webpack');
+const path 		= require('path');
+const webpack = require('webpack');
+
 module.exports = {
-	extry: './entry.js',
+	context: path.resolve(__dirname, "./src"),
+	entry: './main.js',
 	output: {
-		path: __dirname,
+		path: path.resolve(__dirname, './dist'),
 		filename: 'bundle.js'
-	},
-	module: {
-		loaders: [
-			{test: /\.css$/, loader: 'style!css'}
-		]
-	},
-	plugins: [
-    	new webpack.BannerPlugin('This file is created by slaneYang')
-  	]
+	}
 }
