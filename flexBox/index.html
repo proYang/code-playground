@@ -1,77 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	 <!-- 宽度设置为设备实际宽度，初始化倍数为1，最小倍数为1，最大倍数为1，用户缩放为否 -->  
-    <meta name="viewport" content="width=device-width,inital-scale=1.0,minimum-scale=1.0,maximum-scake=1.0,user-scalable=no" />
-	<meta charset="UTF-8">
-	<title>flexBox</title>
-	<link rel="stylesheet" href="lib/flexible.debug.css">
-	<script src="lib/flexible.debug.js"></script>
-	<link rel="stylesheet" href="style.css">
-	<script src="lib/iscroll-probe.js"></script>
-</head>
-<body>
-<h1>基本布局</h1>
-	<div class="box1">
-		<div class="items1">1</div>
-		<div class="items1">2</div>
-		<div class="items1">3</div>
-		<div class="items1 order4">4</div>
-		<div class="items1 order5">5</div>
-	</div>
 
-	<div class="box2">
-		<div class="items2">1</div>
-		<div class="items2">2</div>
-		<div class="items2">3</div>
-		<div class="items2">4</div>
-		<div class="items2">5</div>
-	</div>
-<h1>icon与文本框</h1>
-	<div class="box3">
-		<span class="input-icon"></span>
-		<input type="text">
-	</div>
-<h1>左右滑块</h1>
-	<div class="wrapper">
-		<ul>
-			<li class="items"></li>
-			<li class="items"></li>
-			<li class="items"></li>
-			<li class="items"></li>
-			<li class="items"></li>
-			<li class="items"></li>
-			<li class="items"></li>
-			<li class="items"></li>
-		</ul>
-	</div>
-<h1>单页面flexbox瀑布流</h1>
-	<div id="waterfall">
-		<img src="images/1.jpg" alt="">
-		<img src="images/2.jpg" alt="">
-		<img src="images/3.jpg" alt="">
-		<img src="images/4.jpg" alt="">
-		<img src="images/6.jpg" alt="">
-		<img src="images/7.jpg" alt="">
-		<img src="images/8.jpg" alt="">
-		<img src="images/9.jpg" alt="">
-	</div>
-<h1>圣杯布局</h1>
-	<div id="HolyGrail_container">
-		<div class="HolyGrail_items HolyGrail_top"></div>
-		<div class="HolyGrail_items HolyGrail_center">
-			content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>
-		</div>
-		<div class="HolyGrail_items HolyGrail_footer"></div>
-	</div>
-	<script>
-		var myscroll;
-		window.onload = function() {
-			var myScroll = new IScroll('.wrapper', {
-				scrollX: true,scrollY: false,
-			});
-			console.log(myScroll);
-		}
-	</script>
+<head>
+    <!-- 宽度设置为设备实际宽度，初始化倍数为1，最小倍数为1，最大倍数为1，用户缩放为否 -->
+    <meta name="viewport" content="width=device-width,inital-scale=1.0,minimum-scale=1.0,maximum-scake=1.0,user-scalable=no"
+    />
+    <meta charset="UTF-8">
+    <title>flexBox</title>
+    <link rel="stylesheet" href="lib/flexible.debug.css">
+    <script src="lib/flexible.debug.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="lib/iscroll-probe.js"></script>
+</head>
+
+<body>
+    <h1>基本布局</h1>
+    <div class="box1">
+        <div class="items1">1</div>
+        <div class="items1">2</div>
+        <div class="items1">3</div>
+        <div class="items1 order4">4</div>
+        <div class="items1 order5">5</div>
+    </div>
+
+    <div class="box2">
+        <div class="items2">1</div>
+        <div class="items2">2</div>
+        <div class="items2">3</div>
+        <div class="items2">4</div>
+        <div class="items2">5</div>
+    </div>
+    <h1>icon与文本框</h1>
+    <div class="box3">
+        <span class="input-icon"></span>
+        <input type="text">
+    </div>
+    <h1>左右滑块</h1>
+    <div class="wrapper">
+        <ul>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+        </ul>
+    </div>
+    <h1>单页面flexbox瀑布流1</h1>
+    <p>此方案必须显示设置父容器高度</p>
+    <div id="waterfall">
+        <img src="images/1.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/4.jpg" alt="">
+        <img src="images/6.jpg" alt="">
+        <img src="images/7.jpg" alt="">
+        <img src="images/8.jpg" alt="">
+        <img src="images/9.jpg" alt="">
+    </div>
+    <h1>单页面flexbox瀑布流1</h1>
+    <p>此方案必须显示设置父容器高度</p>
+    <div class="flexrow">
+        <div class="column">
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+        </div>
+        <div class="column">
+            <img src="images/4.jpg" alt="">
+            <img src="images/6.jpg" alt="">
+            <img src="images/7.jpg" alt="">
+        </div>
+        <div class="column">
+            <img src="images/8.jpg" alt="">
+            <img src="images/9.jpg" alt="">
+        </div>
+    </div>
+    <h1>圣杯布局</h1>
+    <div id="HolyGrail_container">
+        <div class="HolyGrail_items HolyGrail_top"></div>
+        <div class="HolyGrail_items HolyGrail_center">
+            content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>content<br>
+        </div>
+        <div class="HolyGrail_items HolyGrail_footer"></div>
+    </div>
+    <script>
+        var myscroll;
+        window.onload = function () {
+            var myScroll = new IScroll('.wrapper', {
+                scrollX: true, scrollY: false,
+            });
+            console.log(myScroll);
+        }
+    </script>
 </body>
+
 </html>

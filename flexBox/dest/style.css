@@ -23,7 +23,9 @@
 	/*主轴方向 轴线换行*/
 	/*flex-direction: row;*/
 	/*flex-wrap: wrap;*/
-	flex-flow: row nowrap;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	        flex-flow: row nowrap;
 
 	/*主轴对齐方式*/
 	-webkit-box-pack: justify;
@@ -63,6 +65,7 @@
 }
 
 .box3 {
+	display: -webkit-box;
 	display: flex;
 }
 .input-icon {
@@ -70,7 +73,8 @@
 	height: 0.5rem;
 }
 .box3 >input {
-	flex: 1;
+	-webkit-box-flex: 1;
+	        flex: 1;
 }
 .wrapper {
 	height: 2.5rem;
@@ -90,8 +94,11 @@
 
 
 #waterfall {
+	display: -webkit-box;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
 	flex-wrap: wrap;
 	height: 100vw;
 }
@@ -100,21 +107,30 @@
 }
 
 .flexrow {
+	display: -webkit-box;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	        flex-direction: row;
 	flex-wrap: wrap;
 }
 .column {
+	display: -webkit-box;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
 	width: 33.33%
 }
 
 
 #HolyGrail_container {
 	height: 100vh;
+	display: -webkit-box;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
 }
 .HolyGrail_items {
 }
@@ -123,7 +139,8 @@
 	background-color: #dce;
 }
 .HolyGrail_center {
-	flex: 1;
+	-webkit-box-flex: 1;
+	        flex: 1;
 	overflow: scroll;
 	font-size: 25px;
 }
@@ -131,3 +148,4 @@
 	height: 10vh;
 	background-color: #acf;
 }
+/*# sourceMappingURL=style.css.map */
