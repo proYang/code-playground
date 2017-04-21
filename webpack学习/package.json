@@ -4,11 +4,13 @@
   "description": "webpack test",
   "main": "src/main.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "slane",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
