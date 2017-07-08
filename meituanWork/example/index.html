@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="city">
+                <span>城市</span>
+                <div class="select J_select">
+                    <span>请选择</span>
+                    <div class="list-group hidden">
+                        <input class="select-search J_search" placeholder="搜索" type="text">
+                        <ul class="city-list" id="J_city-list">
+                            <!---->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="name">
+                <span>名称</span>
+                <input class="select input" placeholder="输入名称" type="text">
+            </div>
+            <button class="btn-search J_search">搜索</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><span class="checkbox checkAll" style="margin-left: 2px;"></span></th>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>城市</th>
+                </tr>
+            </thead>
+            <tbody id="J_tbody">
+                <!--  -->
+            </tbody>
+        </table>
+        <div class="tip">没有找到合适的结果</div>
+        <div class="message">已选择0项：无</div>
+        <div class="button-group J_button-group">
+            <button class="pre">上一页</button>
+            <button class="next">下一页</button>
+        </div>
+    </div>
+    <!-- 引入JQuery -->
+    <script src="./scripts/lib/jquery.min.js"></script>
+    <script src="./scripts/index.js"></script>
+
+</html>

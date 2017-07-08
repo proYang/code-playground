@@ -1,0 +1,16 @@
+{
+  "name": "mobiel-lock",
+  "version": "0.1.0",
+  "description": "mobiel-lock",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "open": "^0.0.5"
+  },
+  "author": "SlaneYang",
+  "license": "ISC"
+}
