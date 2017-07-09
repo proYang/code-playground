@@ -1,10 +1,15 @@
-<h1>{{username}}</h1>
-<div>
-  <p>Books array:</p>
-  <pre>
-    the tilde "$" prefix indicates that the json helper should be loaded
-          as a module, which allows it to be resolved from the "helpers"
-          directory, which is specified as a resolve fallback in the
-          webpack config.
-  </pre>
+<div class="home-container">
+  <h1 class="news">Hacker News {{username}} </h1>
+  <ul class="list">
+    {{#each list}}
+    <li class="item">
+      <span> {{[helpers/getIndex]}} .</span>
+      <h2> 
+        {{title}} 
+        (<span> {{source}} </span>)
+      </h2>
+      <p>Write by {{author.name}} </p>
+    </li>
+    {{/each}}
+  </ul>
 </div>
