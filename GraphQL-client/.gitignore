@@ -1,5 +1,7 @@
 .idea
 .DS_Store
+.vscode
+debug.log
 node_modules/
 npm-debug.log
 test/unit/coverage

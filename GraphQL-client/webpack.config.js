@@ -37,7 +37,7 @@ let config = {
   devServer: {
     proxy: {
       '/graphql': {
-        // target: ''
+        target: 'http://127.0.0.1:8000'
       }
     },
     contentBase: path.join(__dirname, "app"),

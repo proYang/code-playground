@@ -2,6 +2,7 @@
   "name": "graphql-client",
   "version": "1.0.0",
   "description": "",
+  "main": "server/index.js",
   "scripts": {
     "build": "set NODE_ENV=production && webpack",
     "start": "node ./server/index.js",
@@ -28,6 +29,7 @@
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
     "graphql": "^0.10.3",
     "open": "^0.0.5"
   }
