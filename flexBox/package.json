@@ -1,8 +1,20 @@
 {
+  "name": "flexBox",
+  "description": "**Sass混合宏**\r \t`@mixin font-dpr($font-size){\r     \tfont-size: $font-size;",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.4.0",
     "gulp-sourcemaps": "^2.6.0"
-  }
+  },
+  "scripts": {
+    "build": "gulp autoprefixer",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

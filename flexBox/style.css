@@ -131,3 +131,12 @@
 	height: 10vh;
 	background-color: #acf;
 }
+
+.box4 {
+	margin: 20px;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
