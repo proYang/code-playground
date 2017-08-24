@@ -1,0 +1,12 @@
+{
+  "name": "cloneDeep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cloneDeep.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
