@@ -1,21 +1,35 @@
-function cloneDeep(target) {
-  let node;
-  if (Array.isArray(target)) {
-    node = target.length > 0 ? target.slice(0) : []
-    node.forEach((e, i) => {
-      if ((Array.isArray(e) && e.length > 0) || typeof e === "object") {
-        node[i] = cloneDeep(e)
-      }
-    });
-  } else if (typeof target === "object") {
-    node = Object.assign({}, target);
-    Object.keys(node).forEach((key) => {
-      if ((Array.isArray(node[key]) && node[key].length > 0) || typeof node[key] === "object") {
-        node[key] = cloneDeep(node[key])
-      }
-    })
-  } else node = target
-  return node
+function cloneDeep(obj) {
+  var copy;
+
+  // Handle the 3 simple types, and null or undefined
+  if (null == obj || "object" != typeof obj) return obj;
+
+  // Handle Date
+  if (obj instanceof Date) {
+    copy = new Date();
+    copy.setTime(obj.getTime());
+    return copy;
+  }
+
+  // Handle Array
+  if (obj instanceof Array) {
+    copy = [];
+    for (var i = 0, len = obj.length; i < len; i++) {
+      copy[i] = cloneDeep(obj[i]);
+    }
+    return copy;
+  }
+
+  // Handle Object
+  if (obj instanceof Object) {
+    copy = {};
+    for (var attr in obj) {
+      if (obj.hasOwnProperty(attr)) copy[attr] = cloneDeep(obj[attr]);
+    }
+    return copy;
+  }
+
+  throw new Error("Unable to copy obj! Its type isn't supported.");
 }
 
 module.exports = cloneDeep
