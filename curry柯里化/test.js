@@ -19,6 +19,7 @@ function add2() {
             _args = [..._args, ...arguments]
             return pushArgs
         }
+        //重写toString方法，在最后一次调用
         pushArgs.toString = function () {
             _args.reduce((a, b) => a + b)
         }
@@ -26,4 +27,6 @@ function add2() {
     }
     return wrap.apply(null, _args)
 }
+let sum = add2(1, 2)(2)
+console.log(sum)
 console.log(add2(1, 2)(2, 3, 4, 5)(1))
