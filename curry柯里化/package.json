@@ -1,0 +1,12 @@
+{
+  "name": "curry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "curry.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
