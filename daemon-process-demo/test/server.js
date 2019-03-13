@@ -1,22 +1,20 @@
 const http = require('http');
-const cluster = require('cluster');
 
-function createServer() {
-	// 工作进程可以共享任何 TCP 连接。
-	// 在本例子中，共享的是 HTTP 服务器。
-	http.createServer((req, res) => {
-		console.log('worker' + cluster.worker.id);
-        // res.end('worker' + cluster.worker.id + ',PID:' + process.pid);
-        if (req.url === '/disconnect') {
-            console.log('disconnect');
-        	process.disconnect();
-        }
-        if (req.url === '/error') {
-            throw new Error('主动报错')
-        }
-    }).listen(8000);
-
-	console.log(`工作进程 ${process.pid} 已启动`);
+/**
+ * @desc 正常服务
+ */
+module.exports = function () {
+  http.createServer((req, res) => {
+  	res.writeHead(200);
+  	res.end(`Hello ${process.pid}`);
+  }).listen(8000);
 }
 
-module.exports = createServer
+/**
+ * @desc 连接永远不会结束
+ */
+// module.exports = function () {
+//   http.createServer((req, res) => {
+  	
+//   }).listen(8000);
+// }
