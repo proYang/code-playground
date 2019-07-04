@@ -8,3 +8,4 @@
 ## 来源    
 剑指Offer    
 牛客网 [https://www.nowcoder.com/ta/coding-interviews](https://www.nowcoder.com/ta/coding-interviews)
+示例答案 [https://www.nowcoder.com/discuss/101711](https://www.nowcoder.com/discuss/101711)
