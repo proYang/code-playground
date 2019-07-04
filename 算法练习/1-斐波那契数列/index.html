@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="data"></h1>
+  <script>
+    /**
+    * 简易实现 
+    * 时间复杂度 O(2^n)
+    * 空间复杂度 O(n)
+    */
+    function fibonacci (n) {
+      if(n === 0) {
+        return 1;
+      } else if(n === 1) {
+        return 1;
+      } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+    }
+
+    /**
+      * Array 缓存
+      * 时间复杂度 O(n)
+      * 空间复杂度 O(n) 可优化，只保存前两个数字
+      */
+    function fibonacciByArray (n) {
+      const cache = [1, 1];
+      for(let i = 2; i <= n; i ++) {
+        cache[i] = cache[i - 1] + cache[i - 2];
+      }
+      return cache[n];
+    }
+
+    /**
+    * 尾递归优化
+    */
+    function  fibonacciByMatrix (n, ac1 = 1, ac2 = 1) {
+      if(n <= 1) {
+        return ac2;
+      }
+      return fibonacciByMatrix(n - 1, ac2, ac1 + ac2);
+    }
+
+
+    const result = `
+    <p>${fibonacci(10)}</p>
+    <p>${fibonacciByArray(10)}</p>
+    <p>${fibonacciByMatrix(10)}</p>
+    `
+    document.getElementById('data').innerHTML = result;
+  </script>
+</body>
+</html>
