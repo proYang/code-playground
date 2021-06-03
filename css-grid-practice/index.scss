@@ -1,0 +1,105 @@
+.item {
+    border: 1px solid #000;
+    background-color: #FADA4A;
+}
+.grid {
+    margin: 20px auto;
+    width: 400px;
+    height: 400px;
+    background-color: #C7C5C8;
+}
+
+.grid1 {
+    display: grid;
+    // 列分配
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto;
+    .item1 {
+        // item 的起止位置
+        grid-column-start: 1;
+        grid-column-end: 3;
+        // 相当于
+        grid-area: auto / 1 / auto / 3;
+    }
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto;
+    .item1 {
+        height: 40px;
+        width: 40px;
+        // item 的相对位置
+        justify-self: center;
+        align-self: start;
+        place-self: start center;
+    }
+}
+
+.grid3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	grid-template-rows: auto;
+    // 相当于
+    grid-template: auto / 1fr 1fr 2fr;
+
+    // 间隙宽度
+    row-gap: 5px;
+    column-gap: 10px;
+    // 相当于
+    gap: 5px 10px;
+}
+
+.grid4 {
+    display: grid;
+    grid-template: 100px 100px 100px / 100px 100px 100px;
+    // grid 为充满时，父级的对齐
+    place-content: center;
+    // 相当于
+    justify-content: center;
+    align-content: center;
+
+    // 子元素对齐
+    place-items: center;
+    // 相当于
+    justify-items: center;
+    align-items: center;
+    .item {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.grid5 {
+    display: grid;
+    // 列分配
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px;
+    // 隐式网格列宽度
+    grid-auto-columns: 100px;
+
+    .item1 {
+        background-color: #acf;
+    	// item 的起止位置
+    	grid-column-start: 2;
+    	grid-column-end: 3;
+    }
+
+    .item2 {
+    	background-color: #FADA4A;
+    	// item 的起止位置
+    	grid-column-start: 5;
+    	grid-column-end: 6;
+    }
+}
+
+
+.grid6 {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+
+    // grid 的方向
+    grid-auto-flow: column;
+}
